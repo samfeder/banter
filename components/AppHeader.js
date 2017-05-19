@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { View } from 'react-native';
 import { Container, Text, Header, Left, Right, Body, Title } from 'native-base';
 export default class AppHeader extends Component {
     render() {
         return (
-            <Container>
+            <View>
                 <Header>
                     <Left/>
                     <Body>
@@ -11,7 +12,7 @@ export default class AppHeader extends Component {
                     </Body>
                     <Right />
                 </Header>
-            </Container>
+            </View>
         );
     }
 }
