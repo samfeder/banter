@@ -13,6 +13,13 @@ export default class ListThumbnailExample extends Component {
                                 <Text note>Its time to build a difference . .</Text>
                             </Body>
                         </ListItem>
+                        <ListItem>
+                            <Thumbnail square size={80} source={require('../images/avatar_large.png')} />
+                            <Body>
+                                <Text>Sankhadeep</Text>
+                                <Text note>Its time to build a difference . .</Text>
+                            </Body>
+                        </ListItem>
                     </List>
                 </Content>
             </Container>
