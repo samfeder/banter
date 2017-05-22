@@ -1,3 +1,66 @@
 {
-  "extends": "rallycoding"
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["react"],
+  "rules": {
+    //es6 styles
+    "indent": [2, 2, {"SwitchCase": 1 }],
+    "quotes": [2, "single"],
+    //"linebreak-style": [2, "unix"],
+    "semi": [2, "always"],
+    "camelcase": [2],
+//    "new-cap": [1],
+    //Start airbnb styleguide https://github.com/airbnb/javascript
+    "prefer-const": [2], //Why? This ensures that you can't reassign your references, which can lead to bugs and difficult to comprehend code.
+    "no-var": [2], //Why? let is block-scoped rather than function-scoped like var.
+    "no-new-object": [2], //Use the literal syntax for object creation
+    "object-shorthand": [2], // Use object method shorthand
+    "quote-props": [2, "as-needed"], //Why? In general we consider it subjectively easier to read. It improves syntax highlighting, and is also more easily optimized by many JS engines.
+    "no-array-constructor": [2], //Use the literal syntax for array creation.
+    "prefer-template": [2], //Why? Template strings give you a readable, concise syntax with proper newlines and string interpolation features.
+    "no-loop-func": [2], // Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
+    "no-param-reassign": [2], //Why? Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller.
+    "prefer-arrow-callback": [2], //Why? It creates a version of the function that executes in the context of this, which is usually what you want, and is a more concise syntax.
+    "arrow-spacing": [2],
+    "arrow-parens": [2, "as-needed"], //Why? Syntactic sugar. It reads well when multiple functions are chained together.
+//    "arrow-body-style": [2],
+    "no-dupe-class-members": [2], //Why? Duplicate class member declarations will silently prefer the last one - having duplicates is almost certainly a bug.
+    "no-iterator": [2], //Why? This enforces our immutable rule. Dealing with pure functions that return values is easier to reason about than side effects.
+    "dot-notation": [2],
+    "one-var": [2, "never"], //Why? It's easier to add new variable declarations this way, and you never have to worry about swapping out a ; for a , or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
+    "eqeqeq": [2],
+    "no-nested-ternary": [2], //Ternaries should not be nested and generally be single line expressions.
+    "no-unneeded-ternary": [2],
+    "brace-style": [2, "1tbs", {"allowSingleLine": false}],
+    "space-before-blocks": [2],
+    "key-spacing": [2],
+    "space-infix-ops": [2],
+    "padded-blocks": [2, "never"],
+    "space-in-parens": [2, "never"],
+    "object-curly-spacing": [2, "always"],
+    "max-len": [2, 150],
+    "comma-style": [2],
+    "comma-dangle": [2, "never"], //Why? looks fuckin stupid.
+    "no-underscore-dangle": [2],
+    "space-before-function-paren": [2, "never"],
+  },
+  "env": {
+    "browser": true,
+    "jquery": true,
+    "jasmine": true
+  },
+  "globals": {
+    "react": true
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass", // Regex for Component Factory to use, default to "createReactClass"
+      "pragma": "React",  // Pragma to use, default to "React"
+      "version": "15.0" // React version, default to the latest React stable release
+    }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
 }
